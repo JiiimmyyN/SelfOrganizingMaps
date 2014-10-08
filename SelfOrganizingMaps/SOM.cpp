@@ -15,7 +15,7 @@ SOM::SOM(int height, int width, int numCellsX, int numCellsY, int numIterations)
 		}
 	}
 
-	mRadius = (height + width) / 2;
+	mRadius = (height ) / 2;
 	mTimeConstant = numCellsX*numCellsY / std::log(mRadius);
 }
 

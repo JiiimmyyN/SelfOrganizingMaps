@@ -17,11 +17,11 @@ int main()
 		{ 0.0, 0.0, 1.0 },
 		{ 1.0, 1.0, 0.0 },
 		/*{ 0.0, 0.0, 0.0 },*/
-		{ 1.0, 1.0, 1.0 }
+		//{ 1.0, 1.0, 1.0 }
 	};
 	std::uniform_int_distribution<> dist(0, inputVectors.size()-1);
 	//Set size of the map
-	auto xCells = 40, yCells = 40;
+	auto xCells = 400, yCells = 400;
 	auto numIterations = xCells*yCells;
 	SOM som(400, 400, xCells, yCells, numIterations);
 
@@ -42,11 +42,13 @@ int main()
 		if (i < numIterations)
 		{
 			som.train(i, inputVectors[dist(randEngine)]);
+			i++;
 		}
 		window.clear();
 		som.draw(window);
+		
 		window.display();
-		i++;
+		
 	}
 
 
